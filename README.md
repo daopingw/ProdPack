@@ -31,7 +31,7 @@ data = load_example_data()
 model = ProdNP()
 
 # specify the model
-model.DMUs = data['Province']
+model.DMUs = data['region']
 model.x_vars = data[['K', 'L']]
 model.y_vars = data[['Y']]
 model.b_vars = data[['CO2']]
@@ -46,6 +46,7 @@ model.solve()
 data['prod_ch'] = model.prod_ch
 data['eff_ch'] = model.eff_ch
 data['te_ch'] = model.te_ch
+print(data)
 # the results are combind into the data set
 ```
 
